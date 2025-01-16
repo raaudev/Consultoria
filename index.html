@@ -49,7 +49,7 @@
                 <p>Invista em seu futuro, invista em você: Agende uma consulta agora e dê o primeiro passo para um futuro mais próspero.</p>
                 <div class="redes-social">
                     <a href="https://wa.me/5575988353949"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="mailto:rauconsultor629@gmail.com?subject=Consulta&body=Olá, gostaria de mais informações!"><i class="bi bi-envelope-fill"></i></a>
+                    <a href="mailto:rauconsultor629@gmail.com?subject=Consulta&body=Olá, gostaria de mais informações!"><i class="fa-brands fa-envelope-fill"></i></a>
                     <a href="https://www.instagram.com/raauconsultor?igsh=aTV5cGdlMDExbmF2"><i class="fa-brands fa-instagram"></i></a>
                 </div><!--redes-social-->
                 <button class="btn">Faça Acontecer!</button>
@@ -108,7 +108,7 @@
             </div>
         </div>
         <div class="btn-cta">
-            <a href="https://wa.me/5575988353949"><button>Angede uma Consultoria</button></a>
+            <a href="https://wa.me/5575988353949"><button>Agende uma Consultoria</button></a>
         </div>
     </div>
 </section>
@@ -168,14 +168,13 @@
         
         <div class="contato-grid">
             <!-- Formulário de contato -->
-            <form action="#" method="POST" class="form-contato">
-                <input type="text" name="nome" placeholder="Seu Nome" required>
-                <input type="email" name="email" placeholder="Seu E-mail" required>
-                <input type="tel" name="telefone" placeholder="Seu Telefone" required>
-                <textarea name="mensagem" rows="5" placeholder="Como posso ajudar você?" required></textarea>
-                <button type="submit">Enviar Mensagem</button>
+            <form id="formContato" class="form-contato">
+    <input type="text" name="nome" placeholder="Seu Nome" required>
+    <input type="email" name="email" placeholder="Seu E-mail" required>
+    <input type="tel" name="telefone" placeholder="Seu Telefone" required>
+    <textarea name="mensagem" rows="5" placeholder="Como posso ajudar você?" required></textarea>
+    <button type="submit">Enviar Mensagem</button>
             </form>
-
             <!-- Informações diretas -->
             <div class="info-contato">
                 <h3>Meus Contatos</h3>
@@ -240,5 +239,31 @@
     <!-- 100% privacy-first analytics -->
 <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function() {
+    emailjs.init("4eGQPGBcuDJXpauvo"); // Substitua pelo seu User ID
+  })();
+    document.getElementById('formContato').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita o envio padrão do formulário
+
+    const serviceID = 'service_l9b58ii'; // Substitua pelo seu Service ID
+    const templateID = 'template_ydsscui'; // Substitua pelo seu Template ID
+
+    // Envia o formulário com EmailJS
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        alert('Mensagem enviada com sucesso!');
+      }, (error) => {
+        console.error('Erro ao enviar a mensagem:', error);
+        alert('Houve um problema ao enviar sua mensagem. Tente novamente.');
+      });
+  });
+</script>
+
+
+
 </body>
 </html>
