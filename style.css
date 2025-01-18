@@ -75,7 +75,7 @@ body {
     }
 }
 
-/* Header */
+/* Estilo do cabeçalho */
 header {
     display: flex;
     justify-content: space-between;
@@ -116,93 +116,20 @@ header {
     cursor: pointer;
 }
 
-button {
-    color: var(--cor1);
-    background: transparent;
-    border: solid 1px var(--cor1);
-    padding: 5px 15px;
-    border-radius: 15px;
-    font-size: 12px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: var(--cor1);
-    color: var(--cor2);
-    transition: 0.5s;
-}
-
-/* Responsive Header */
+/* Responsividade sem o menu móvel */
 @media screen and (max-width: 1023px) {
     .cabeçalho-link {
-        display: none;
-    }
-
-    .menu-toggle {
-        display: inline-block;
-        font-size: 20px;
-        color: var(--cor2);
-        cursor: pointer;
-    }
-
-    .menu {
-        display: none;
-        flex-direction: column;
-        background-color: #000;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1rem 4%;
-    }
-
-    .menu.active {
         display: flex;
+        gap: 1rem;
     }
 
-    .menu a {
-        color: var(--cor2);
-        padding: 10px 0;
-        border-bottom: 1px solid var(--cor1);
-        text-align: center;
+    .logo {
+        display: inline-flex;
     }
 
-    .menu a:hover {
-        color: var(--cor1);
-    }
+    /* Removido o código do menu toggle, sem necessidade de esconder o menu */
 }
 
-.seta {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background-color: var(--cor1);
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, transform 0.3s;
-    z-index: 10;
-}
-
-.seta i {
-    color: var(--cor2);
-    font-size: 20px;
-}
-
-.seta:hover {
-    background-color: var(--cor2);
-    transform: translateX(-50%) scale(1.1);
-}
-
-.seta:hover i {
-    color: var(--cor1);
-}
 
 /* Container Text */
 .container-text {
