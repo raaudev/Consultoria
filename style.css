@@ -75,7 +75,7 @@ body {
     }
 }
 
-/* Estilo do cabeçalho */
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -132,57 +132,76 @@ button:hover {
     transition: 0.5s;
 }
 
-/* Menu Móvel */
-.menu-toggle {
-    display: none; /* Escondido por padrão em telas grandes */
-    font-size: 20px;
-    color: var(--cor2);
-    cursor: pointer;
-}
-
-.menu {
-    display: none; /* Oculto por padrão */
-    flex-direction: column;
-    background-color: #000;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 1rem 4%;
-}
-
-.menu.active {
-    display: flex; /* Exibe o menu quando a classe "active" é adicionada */
-}
-
-.menu a {
-    color: var(--cor2);
-    padding: 10px 0;
-    border-bottom: 1px solid var(--cor1);
-    text-align: center;
-}
-
-.menu a:hover {
-    color: var(--cor1);
-}
-
-/* Responsividade: Menu Móvel */
-@media screen and (max-width: 1023px) {
+/* Responsive Header */
+@media screen and (max-width: 768px) {
     .cabeçalho-link {
-        display: none; /* Esconde o menu original em telas pequenas */
+        display: none;
     }
 
     .menu-toggle {
-        display: inline-block; /* Exibe o ícone de menu móvel em telas pequenas */
+        display: inline-block;
+        font-size: 20px;
+        color: var(--cor2);
+        cursor: pointer;
     }
 
     .menu {
-        display: none; /* O menu começa oculto */
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 4%;
     }
 
     .menu.active {
-        display: flex; /* Menu visível quando "active" */
+        display: flex;
     }
+
+    .menu a {
+        color: var(--cor2);
+        padding: 10px 0;
+        border-bottom: 1px solid var(--cor1);
+        text-align: center;
+    }
+
+    .menu a:hover {
+        color: var(--cor1);
+    }
+}
+
+.seta {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 10;
+}
+
+.seta i {
+    color: var(--cor2);
+    font-size: 20px;
+}
+
+.seta:hover {
+    background-color: var(--cor2);
+    transform: translateX(-50%) scale(1.1);
+}
+
+.seta:hover i {
+    color: var(--cor1);
 }
 
 
