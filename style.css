@@ -116,18 +116,73 @@ header {
     cursor: pointer;
 }
 
-/* Responsividade sem o menu móvel */
+button {
+    color: var(--cor1);
+    background: transparent;
+    border: solid 1px var(--cor1);
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--cor1);
+    color: var(--cor2);
+    transition: 0.5s;
+}
+
+/* Menu Móvel */
+.menu-toggle {
+    display: none; /* Escondido por padrão em telas grandes */
+    font-size: 20px;
+    color: var(--cor2);
+    cursor: pointer;
+}
+
+.menu {
+    display: none; /* Oculto por padrão */
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 4%;
+}
+
+.menu.active {
+    display: flex; /* Exibe o menu quando a classe "active" é adicionada */
+}
+
+.menu a {
+    color: var(--cor2);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--cor1);
+    text-align: center;
+}
+
+.menu a:hover {
+    color: var(--cor1);
+}
+
+/* Responsividade: Menu Móvel */
 @media screen and (max-width: 1023px) {
     .cabeçalho-link {
-        display: flex;
-        gap: 1rem;
+        display: none; /* Esconde o menu original em telas pequenas */
     }
 
-    .logo {
-        display: inline-flex;
+    .menu-toggle {
+        display: inline-block; /* Exibe o ícone de menu móvel em telas pequenas */
     }
 
-    /* Removido o código do menu toggle, sem necessidade de esconder o menu */
+    .menu {
+        display: none; /* O menu começa oculto */
+    }
+
+    .menu.active {
+        display: flex; /* Menu visível quando "active" */
+    }
 }
 
 
